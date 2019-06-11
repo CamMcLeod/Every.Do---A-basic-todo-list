@@ -15,6 +15,9 @@
 		628CB4CC22B0291300FC073E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CB4CB22B0291300FC073E /* main.m */; };
 		628CB4D622B0291300FC073E /* Every_DoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CB4D522B0291300FC073E /* Every_DoTests.m */; };
 		628CB4E122B0291300FC073E /* Every_DoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CB4E022B0291300FC073E /* Every_DoUITests.m */; };
+		628CB4F022B02CBC00FC073E /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CB4EF22B02CBC00FC073E /* ToDo.m */; };
+		628CB4F322B031CD00FC073E /* TaskToDoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CB4F222B031CD00FC073E /* TaskToDoTableViewCell.m */; };
+		628CB4F522B0345500FC073E /* raccoon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 628CB4F422B0345500FC073E /* raccoon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,11 @@
 		628CB4DC22B0291300FC073E /* Every.DoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Every.DoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		628CB4E022B0291300FC073E /* Every_DoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Every_DoUITests.m; sourceTree = "<group>"; };
 		628CB4E222B0291300FC073E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		628CB4EE22B02CBC00FC073E /* ToDo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDo.h; sourceTree = "<group>"; };
+		628CB4EF22B02CBC00FC073E /* ToDo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDo.m; sourceTree = "<group>"; };
+		628CB4F122B031CD00FC073E /* TaskToDoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskToDoTableViewCell.h; sourceTree = "<group>"; };
+		628CB4F222B031CD00FC073E /* TaskToDoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskToDoTableViewCell.m; sourceTree = "<group>"; };
+		628CB4F422B0345500FC073E /* raccoon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = raccoon.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +113,12 @@
 				628CB4BD22B0291300FC073E /* AppDelegate.m */,
 				628CB4BF22B0291300FC073E /* ViewController.h */,
 				628CB4C022B0291300FC073E /* ViewController.m */,
+				628CB4EE22B02CBC00FC073E /* ToDo.h */,
+				628CB4EF22B02CBC00FC073E /* ToDo.m */,
 				628CB4C222B0291300FC073E /* Main.storyboard */,
+				628CB4F122B031CD00FC073E /* TaskToDoTableViewCell.h */,
+				628CB4F222B031CD00FC073E /* TaskToDoTableViewCell.m */,
+				628CB4F422B0345500FC073E /* raccoon.jpg */,
 				628CB4C522B0291300FC073E /* Assets.xcassets */,
 				628CB4C722B0291300FC073E /* LaunchScreen.storyboard */,
 				628CB4CA22B0291300FC073E /* Info.plist */,
@@ -238,6 +251,7 @@
 				628CB4C922B0291300FC073E /* LaunchScreen.storyboard in Resources */,
 				628CB4C622B0291300FC073E /* Assets.xcassets in Resources */,
 				628CB4C422B0291300FC073E /* Main.storyboard in Resources */,
+				628CB4F522B0345500FC073E /* raccoon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +279,8 @@
 				628CB4C122B0291300FC073E /* ViewController.m in Sources */,
 				628CB4CC22B0291300FC073E /* main.m in Sources */,
 				628CB4BE22B0291300FC073E /* AppDelegate.m in Sources */,
+				628CB4F022B02CBC00FC073E /* ToDo.m in Sources */,
+				628CB4F322B031CD00FC073E /* TaskToDoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

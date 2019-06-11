@@ -7,17 +7,74 @@
 //
 
 #import "ViewController.h"
+#import "ToDo.h"
+#import "TaskToDoTableViewCell.h"
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *toDoTableView;
+
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    
+    NSMutableArray *toDoArray;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    int toDoCapacity = 5;
+    self.toDoTableView.delegate = self;
+    self.toDoTableView.dataSource = self;
+    
+    toDoArray = [[NSMutableArray alloc] initWithCapacity:toDoCapacity];
+    
+    for (int i = 0; i <toDoCapacity; i++) {
+        
+        ToDo *task = [[ToDo alloc] init];
+        task.taskTitle = [NSString stringWithFormat:@"Task: %d", i ];
+        task.toDoDescription = [NSString stringWithFormat:@"Do this %d times", i ];
+        task.priorityNumber = (NSInteger)(toDoCapacity - i);
+        toDoArray[i] = task;
+        NSLog(@"task '%@' added to array", [toDoArray[i] taskTitle]);
+        
+    }
+    
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"raccoon.jpg"]];
+    [tempImageView setFrame:self.toDoTableView.frame];
+    tempImageView.contentMode = UIViewContentModeScaleAspectFill;
+    tempImageView.alpha = 0.75;
+    self.toDoTableView.backgroundView = tempImageView;
 }
 
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [toDoArray count];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Fetch a cell of the appropriate type.
+    TaskToDoTableViewCell *taskCell = [tableView dequeueReusableCellWithIdentifier:@"taskCellIdentifier" forIndexPath:indexPath];
+    // Configure the cell’s contents.
+
+    ToDo *tasksToDo = toDoArray[indexPath.row];
+    
+    taskCell.taskLabel.text = tasksToDo.taskTitle;
+    taskCell.taskDescriptionLabel.text = tasksToDo.toDoDescription;
+    taskCell.taskPriorityLabel.text = [NSString stringWithFormat:@"%ld", tasksToDo.priorityNumber];
+
+    return taskCell;
+
+    
+}
 
 @end
