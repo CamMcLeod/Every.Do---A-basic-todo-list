@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Tasks-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -85,7 +85,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zDI-CG-0Iz"/>
+                    <navigationItem key="navigationItem" title="My Tasks" id="zDI-CG-0Iz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6wv-XG-EFm">
+                            <connections>
+                                <segue destination="7xA-6v-B17" kind="show" id="ciS-cH-dia"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ToDoTableView" destination="1ZW-v2-CAQ" id="2AV-Gb-xzj"/>
                     </connections>
@@ -94,10 +100,29 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="89.732142857142847"/>
         </scene>
-        <!--Task Detail View Controller-->
+        <!--New Task-->
+        <scene sceneID="T3b-6h-dbw">
+            <objects>
+                <viewController title="New Task" id="7xA-6v-B17" customClass="NewToDoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lIP-rO-i9r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ajo-Ul-xis"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Task" id="YPq-ao-Hcb">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="vB9-do-ezm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="5bx-7g-F8i"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqE-iE-LIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2112" y="-319"/>
+        </scene>
+        <!--Task Detail-->
         <scene sceneID="beZ-5i-zKq">
             <objects>
-                <viewController id="kiu-BE-faX" customClass="TaskDetailViewController" sceneMemberID="viewController">
+                <viewController title="Task Detail" id="kiu-BE-faX" customClass="TaskDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wyw-fX-kTe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,30 +130,33 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfI-fV-ujT">
                                 <rect key="frame" x="116" y="128" width="182" height="49"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskDescriptionLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-fw-ETh">
-                                <rect key="frame" x="92.5" y="432.5" width="229" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskDescriptionLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-fw-ETh">
+                                <rect key="frame" x="26.5" y="197" width="361.5" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="taskPriorityLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIR-5d-KjU">
-                                <rect key="frame" x="68" y="779" width="278" height="43"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <rect key="frame" x="48.5" y="286" width="317" height="49"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wsa-fw-ETh" firstAttribute="top" secondItem="OfI-fV-ujT" secondAttribute="bottom" constant="20" id="AVZ-uT-vp5"/>
                             <constraint firstItem="OfI-fV-ujT" firstAttribute="centerX" secondItem="Wyw-fX-kTe" secondAttribute="centerX" id="Dbd-un-fG0"/>
-                            <constraint firstItem="iZ6-oJ-HQu" firstAttribute="bottom" secondItem="kIR-5d-KjU" secondAttribute="bottom" constant="40" id="P9U-N4-Zg4"/>
-                            <constraint firstItem="wsa-fw-ETh" firstAttribute="centerY" secondItem="Wyw-fX-kTe" secondAttribute="centerY" id="SJB-yr-WnG"/>
+                            <constraint firstItem="kIR-5d-KjU" firstAttribute="top" secondItem="wsa-fw-ETh" secondAttribute="bottom" constant="40" id="HbS-NC-KKr"/>
                             <constraint firstItem="OfI-fV-ujT" firstAttribute="top" secondItem="iZ6-oJ-HQu" secondAttribute="top" constant="40" id="tC5-uv-rcD"/>
                             <constraint firstItem="kIR-5d-KjU" firstAttribute="centerX" secondItem="Wyw-fX-kTe" secondAttribute="centerX" id="y1v-fu-o69"/>
                             <constraint firstItem="wsa-fw-ETh" firstAttribute="centerX" secondItem="Wyw-fX-kTe" secondAttribute="centerX" id="yWl-S2-Ggm"/>
@@ -143,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7t-cn-ui8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808.6956521739132" y="85.714285714285708"/>
+            <point key="canvasLocation" x="2112" y="509"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mb2-6f-DCw">

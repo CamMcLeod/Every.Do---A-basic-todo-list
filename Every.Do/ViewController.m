@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "ToDo.h"
 #import "TaskToDoTableViewCell.h"
-#import "TaskDetailViewController.h"
 
 @interface ViewController ()
 
@@ -43,11 +42,11 @@
         
     }
     
-    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"raccoon.jpg"]];
-    [tempImageView setFrame:self.toDoTableView.frame];
-    tempImageView.contentMode = UIViewContentModeScaleAspectFill;
-    tempImageView.alpha = 0.75;
-    self.toDoTableView.backgroundView = tempImageView;
+//    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"raccoon.jpg"]];
+//    [tempImageView setFrame:self.toDoTableView.frame];
+//    tempImageView.contentMode = UIViewContentModeScaleAspectFill;
+//    tempImageView.alpha = 0.75;
+//    self.toDoTableView.backgroundView = tempImageView;
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(TaskToDoTableViewCell *)taskCell {

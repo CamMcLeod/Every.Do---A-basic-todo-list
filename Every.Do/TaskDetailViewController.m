@@ -21,15 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _incomingCell = self.incomingCell;
-    _taskLabel = self.taskLabel;
-    _taskDescriptionLabel = self.taskDescriptionLabel;
-    _taskPriorityLabel = self.taskPriorityLabel;
+//    _incomingCell = self.incomingCell;
+//    _taskLabel = self.taskLabel;
+//    _taskDescriptionLabel = self.taskDescriptionLabel;
+//    _taskPriorityLabel = self.taskPriorityLabel;
     
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"raccoon.jpg"]];
     [tempImageView setFrame:self.view.frame];
     tempImageView.contentMode = UIViewContentModeScaleAspectFill;
     tempImageView.alpha = 0.75;
+    [self.view addSubview:tempImageView];
+    [self.view sendSubviewToBack:tempImageView];
     
     NSString *incomingTaskName = self.incomingCell.taskLabel.text;
     NSString *incomingDescription = self.incomingCell.taskDescriptionLabel.text;
