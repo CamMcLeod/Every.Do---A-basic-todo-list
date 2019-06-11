@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ToDo.h"
 #import "TaskToDoTableViewCell.h"
+#import "TaskDetailViewController.h"
 
 @interface ViewController ()
 
@@ -49,6 +50,13 @@
     self.toDoTableView.backgroundView = tempImageView;
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(TaskToDoTableViewCell *)taskCell {
+    
+    if ([segue.identifier isEqualToString:@"showTaskDetailSegue"]) {
+        [segue.destinationViewController performSelector:@selector(setIncomingCell:) withObject:taskCell];
+        
+    }
+}
 
 #pragma mark - UITableViewDataSource
 

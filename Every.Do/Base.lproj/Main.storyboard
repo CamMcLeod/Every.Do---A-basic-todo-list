@@ -70,7 +70,7 @@
                                             <outlet property="taskDescriptionLabel" destination="b8s-oX-HPp" id="dGn-7d-c6K"/>
                                             <outlet property="taskLabel" destination="O5b-tp-QNq" id="OKy-q1-6d7"/>
                                             <outlet property="taskPriorityLabel" destination="N84-Xi-Fgl" id="Omf-GS-Oci"/>
-                                            <segue destination="kiu-BE-faX" kind="show" identifier="viewTaskDetail" id="GfP-0c-rxi"/>
+                                            <segue destination="kiu-BE-faX" kind="show" identifier="showTaskDetailSegue" id="6uC-Lo-hwc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -101,9 +101,45 @@
                     <view key="view" contentMode="scaleToFill" id="Wyw-fX-kTe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfI-fV-ujT">
+                                <rect key="frame" x="116" y="128" width="182" height="49"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskDescriptionLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-fw-ETh">
+                                <rect key="frame" x="92.5" y="432.5" width="229" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="taskPriorityLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIR-5d-KjU">
+                                <rect key="frame" x="68" y="779" width="278" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OfI-fV-ujT" firstAttribute="centerX" secondItem="Wyw-fX-kTe" secondAttribute="centerX" id="Dbd-un-fG0"/>
+                            <constraint firstItem="iZ6-oJ-HQu" firstAttribute="bottom" secondItem="kIR-5d-KjU" secondAttribute="bottom" constant="40" id="P9U-N4-Zg4"/>
+                            <constraint firstItem="wsa-fw-ETh" firstAttribute="centerY" secondItem="Wyw-fX-kTe" secondAttribute="centerY" id="SJB-yr-WnG"/>
+                            <constraint firstItem="OfI-fV-ujT" firstAttribute="top" secondItem="iZ6-oJ-HQu" secondAttribute="top" constant="40" id="tC5-uv-rcD"/>
+                            <constraint firstItem="kIR-5d-KjU" firstAttribute="centerX" secondItem="Wyw-fX-kTe" secondAttribute="centerX" id="y1v-fu-o69"/>
+                            <constraint firstItem="wsa-fw-ETh" firstAttribute="centerX" secondItem="Wyw-fX-kTe" secondAttribute="centerX" id="yWl-S2-Ggm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iZ6-oJ-HQu"/>
                     </view>
+                    <connections>
+                        <outlet property="taskDescriptionLabel" destination="wsa-fw-ETh" id="iw7-96-ieJ"/>
+                        <outlet property="taskLabel" destination="OfI-fV-ujT" id="fKC-WO-R58"/>
+                        <outlet property="taskPriorityLabel" destination="kIR-5d-KjU" id="oSY-5m-NIm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7t-cn-ui8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
