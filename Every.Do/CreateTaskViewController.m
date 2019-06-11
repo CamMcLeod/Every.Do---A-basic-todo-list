@@ -6,13 +6,15 @@
 //  Copyright © 2019 Cameron Mcleod. All rights reserved.
 //
 
-#import "NewToDoViewController.h"
+#import "CreateTaskViewController.h"
 
-@interface NewToDoViewController ()
+
+@interface CreateTaskViewController ()
+
 
 @end
 
-@implementation NewToDoViewController
+@implementation CreateTaskViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +28,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
+ }
 */
+
 
 @end

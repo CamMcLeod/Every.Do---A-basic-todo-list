@@ -19,7 +19,7 @@
 		628CB4F322B031CD00FC073E /* TaskToDoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CB4F222B031CD00FC073E /* TaskToDoTableViewCell.m */; };
 		628CB4F522B0345500FC073E /* raccoon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 628CB4F422B0345500FC073E /* raccoon.jpg */; };
 		628CB4F822B0484700FC073E /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CB4F722B0484700FC073E /* TaskDetailViewController.m */; };
-		628CB4FB22B0572F00FC073E /* NewToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CB4FA22B0572F00FC073E /* NewToDoViewController.m */; };
+		628CB4FB22B0572F00FC073E /* CreateTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CB4FA22B0572F00FC073E /* CreateTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,8 @@
 		628CB4F422B0345500FC073E /* raccoon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = raccoon.jpg; sourceTree = "<group>"; };
 		628CB4F622B0484700FC073E /* TaskDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
 		628CB4F722B0484700FC073E /* TaskDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
-		628CB4F922B0572F00FC073E /* NewToDoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewToDoViewController.h; sourceTree = "<group>"; };
-		628CB4FA22B0572F00FC073E /* NewToDoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewToDoViewController.m; sourceTree = "<group>"; };
+		628CB4F922B0572F00FC073E /* CreateTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateTaskViewController.h; sourceTree = "<group>"; };
+		628CB4FA22B0572F00FC073E /* CreateTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +126,8 @@
 				628CB4F722B0484700FC073E /* TaskDetailViewController.m */,
 				628CB4F122B031CD00FC073E /* TaskToDoTableViewCell.h */,
 				628CB4F222B031CD00FC073E /* TaskToDoTableViewCell.m */,
-				628CB4F922B0572F00FC073E /* NewToDoViewController.h */,
-				628CB4FA22B0572F00FC073E /* NewToDoViewController.m */,
+				628CB4F922B0572F00FC073E /* CreateTaskViewController.h */,
+				628CB4FA22B0572F00FC073E /* CreateTaskViewController.m */,
 				628CB4F422B0345500FC073E /* raccoon.jpg */,
 				628CB4C522B0291300FC073E /* Assets.xcassets */,
 				628CB4C722B0291300FC073E /* LaunchScreen.storyboard */,
@@ -288,7 +288,7 @@
 			files = (
 				628CB4C122B0291300FC073E /* ViewController.m in Sources */,
 				628CB4CC22B0291300FC073E /* main.m in Sources */,
-				628CB4FB22B0572F00FC073E /* NewToDoViewController.m in Sources */,
+				628CB4FB22B0572F00FC073E /* CreateTaskViewController.m in Sources */,
 				628CB4BE22B0291300FC073E /* AppDelegate.m in Sources */,
 				628CB4F022B02CBC00FC073E /* ToDo.m in Sources */,
 				628CB4F822B0484700FC073E /* TaskDetailViewController.m in Sources */,

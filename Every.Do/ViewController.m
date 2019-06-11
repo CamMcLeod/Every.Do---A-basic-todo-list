@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ToDo.h"
 #import "TaskToDoTableViewCell.h"
+#import "CreateTaskViewController.h"
 
 @interface ViewController ()
 
@@ -25,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    int toDoCapacity = 5;
+    int toDoCapacity = 7;
     self.toDoTableView.delegate = self;
     self.toDoTableView.dataSource = self;
     
@@ -49,12 +50,29 @@
 //    self.toDoTableView.backgroundView = tempImageView;
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(TaskToDoTableViewCell *)taskCell {
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"showTaskDetailSegue"]) {
-        [segue.destinationViewController performSelector:@selector(setIncomingCell:) withObject:taskCell];
+        [segue.destinationViewController performSelector:@selector(setIncomingCell:) withObject:sender];
         
     }
+}
+
+- (IBAction)unwindToViewController:(UIStoryboardSegue *)unwindSegue {
+    
+    CreateTaskViewController *newTaskViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
+    
+    ToDo *taskSave = [[ToDo alloc] init];
+    taskSave.taskTitle = [newTaskViewController taskNameTextField].text;
+    taskSave.toDoDescription = [newTaskViewController taskDescriptionTextField].text;
+    taskSave.priorityNumber = [[newTaskViewController taskPriorityTextField].text integerValue];
+    
+    NSLog(@"New task '%@' created", taskSave.taskTitle);
+    
+    [toDoArray addObject:taskSave];
+    NSLog(@"%@", toDoArray);
+    [self.toDoTableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource

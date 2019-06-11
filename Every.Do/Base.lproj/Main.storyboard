@@ -88,7 +88,7 @@
                     <navigationItem key="navigationItem" title="My Tasks" id="zDI-CG-0Iz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6wv-XG-EFm">
                             <connections>
-                                <segue destination="7xA-6v-B17" kind="show" id="ciS-cH-dia"/>
+                                <segue destination="7xA-6v-B17" kind="show" identifier="showNewTaskSegue" id="ciS-cH-dia"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -103,19 +103,75 @@
         <!--New Task-->
         <scene sceneID="T3b-6h-dbw">
             <objects>
-                <viewController title="New Task" id="7xA-6v-B17" customClass="NewToDoViewController" sceneMemberID="viewController">
+                <viewController title="New Task" id="7xA-6v-B17" customClass="CreateTaskViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lIP-rO-i9r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42o-9W-GJj">
+                                <rect key="frame" x="225" y="265" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNy-e4-qEC">
+                                <rect key="frame" x="114.5" y="128" width="185.5" height="52"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHw-c5-BdT">
+                                <rect key="frame" x="90" y="200" width="234" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Priority" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tfl-Jw-hYn">
+                                <rect key="frame" x="118.5" y="260" width="177" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zNy-e4-qEC" firstAttribute="top" secondItem="Ajo-Ul-xis" secondAttribute="top" constant="40" id="1hK-cF-qq3"/>
+                            <constraint firstItem="Ajo-Ul-xis" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tfl-Jw-hYn" secondAttribute="trailing" id="2cD-D6-UhB"/>
+                            <constraint firstItem="Ajo-Ul-xis" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zNy-e4-qEC" secondAttribute="trailing" id="6wm-8n-O7x"/>
+                            <constraint firstItem="tHw-c5-BdT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ajo-Ul-xis" secondAttribute="leading" id="AKm-o6-qBh"/>
+                            <constraint firstItem="Ajo-Ul-xis" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tHw-c5-BdT" secondAttribute="trailing" id="NIs-3m-7rN"/>
+                            <constraint firstItem="42o-9W-GJj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lIP-rO-i9r" secondAttribute="leading" constant="20" symbolic="YES" id="Nqi-0b-yAh"/>
+                            <constraint firstItem="tHw-c5-BdT" firstAttribute="top" secondItem="zNy-e4-qEC" secondAttribute="bottom" constant="20" id="S8F-oh-tXw"/>
+                            <constraint firstItem="Tfl-Jw-hYn" firstAttribute="top" secondItem="tHw-c5-BdT" secondAttribute="bottom" constant="20" id="W49-dL-pEy"/>
+                            <constraint firstItem="Tfl-Jw-hYn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ajo-Ul-xis" secondAttribute="leading" id="gU6-nV-Rhl"/>
+                            <constraint firstItem="tHw-c5-BdT" firstAttribute="centerX" secondItem="lIP-rO-i9r" secondAttribute="centerX" id="jhk-q5-ZTY"/>
+                            <constraint firstItem="42o-9W-GJj" firstAttribute="top" secondItem="lIP-rO-i9r" secondAttribute="top" constant="265" id="kPq-NZ-ZKj"/>
+                            <constraint firstItem="zNy-e4-qEC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ajo-Ul-xis" secondAttribute="leading" id="oc4-oR-irn"/>
+                            <constraint firstItem="zNy-e4-qEC" firstAttribute="centerX" secondItem="lIP-rO-i9r" secondAttribute="centerX" id="tv6-ZI-MLI"/>
+                            <constraint firstItem="Tfl-Jw-hYn" firstAttribute="centerX" secondItem="lIP-rO-i9r" secondAttribute="centerX" id="udg-91-9Jk"/>
+                            <constraint firstAttribute="trailing" secondItem="42o-9W-GJj" secondAttribute="trailing" constant="189" id="xI3-mH-lM7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ajo-Ul-xis"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Task" id="YPq-ao-Hcb">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="vB9-do-ezm"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="5bx-7g-F8i"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5bx-7g-F8i">
+                            <connections>
+                                <action selector="saveButtonPushed:" destination="7xA-6v-B17" id="2en-wd-IxC"/>
+                                <segue destination="4NJ-gT-v8v" kind="unwind" unwindAction="unwindToViewController:" id="CDN-O9-u97"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="taskDescriptionTextField" destination="tHw-c5-BdT" id="Mez-2G-rwt"/>
+                        <outlet property="taskNameTextField" destination="zNy-e4-qEC" id="104-Mn-nyY"/>
+                        <outlet property="taskPriorityTextField" destination="Tfl-Jw-hYn" id="i88-TL-fMu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqE-iE-LIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4NJ-gT-v8v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2112" y="-319"/>
         </scene>
