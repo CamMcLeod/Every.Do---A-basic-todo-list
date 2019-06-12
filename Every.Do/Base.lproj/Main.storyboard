@@ -23,49 +23,49 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="taskCellIdentifier" rowHeight="88" id="XOS-tw-dNm" customClass="TaskToDoTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="88"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="taskCellIdentifier" rowHeight="150" id="XOS-tw-dNm" customClass="TaskToDoTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XOS-tw-dNm" id="fDY-S4-IeJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="87.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XOS-tw-dNm" id="fDY-S4-IeJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5b-tp-QNq">
-                                                    <rect key="frame" x="8" y="31.5" width="93" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="taskLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5b-tp-QNq">
+                                                    <rect key="frame" x="140.5" y="11" width="93" height="25"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <size key="shadowOffset" width="-1" height="-1"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskDescriptionLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b8s-oX-HPp">
-                                                    <rect key="frame" x="165.5" y="19" width="180.5" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N84-Xi-Fgl">
+                                                    <rect key="frame" x="25" y="62.5" width="28" height="25"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <size key="shadowOffset" width="-1" height="-1"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskDescriptionLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="b8s-oX-HPp">
+                                                    <rect key="frame" x="193.5" y="125.5" width="180.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <size key="shadowOffset" width="-1" height="-1"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="taskPriorityLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N84-Xi-Fgl">
-                                                    <rect key="frame" x="173" y="57.5" width="193" height="22"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <size key="shadowOffset" width="-1" height="-1"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <constraints>
-                                                <constraint firstItem="N84-Xi-Fgl" firstAttribute="top" secondItem="b8s-oX-HPp" secondAttribute="bottom" constant="14.5" id="2hl-wf-aM0"/>
-                                                <constraint firstItem="b8s-oX-HPp" firstAttribute="top" secondItem="fDY-S4-IeJ" secondAttribute="topMargin" constant="8" id="CB9-dB-7vJ"/>
-                                                <constraint firstItem="b8s-oX-HPp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O5b-tp-QNq" secondAttribute="trailing" constant="8" id="ENR-4T-SWm"/>
-                                                <constraint firstAttribute="bottom" secondItem="N84-Xi-Fgl" secondAttribute="bottom" constant="8" id="VWs-DE-fSf"/>
-                                                <constraint firstAttribute="trailing" secondItem="N84-Xi-Fgl" secondAttribute="trailing" constant="8" id="c4W-lZ-UxW"/>
-                                                <constraint firstItem="O5b-tp-QNq" firstAttribute="leading" secondItem="fDY-S4-IeJ" secondAttribute="leading" constant="8" id="dfS-Nl-hqC"/>
-                                                <constraint firstItem="O5b-tp-QNq" firstAttribute="centerY" secondItem="fDY-S4-IeJ" secondAttribute="centerY" id="ngN-lr-N38"/>
-                                                <constraint firstItem="N84-Xi-Fgl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O5b-tp-QNq" secondAttribute="trailing" constant="8" id="tPY-rs-VWw"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="b8s-oX-HPp" secondAttribute="trailing" constant="8" id="xtT-qC-0Up"/>
+                                                <constraint firstItem="O5b-tp-QNq" firstAttribute="centerX" secondItem="fDY-S4-IeJ" secondAttribute="centerX" id="8mv-Bv-zSo"/>
+                                                <constraint firstItem="b8s-oX-HPp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O5b-tp-QNq" secondAttribute="bottom" constant="8" id="MrM-aJ-Mbb"/>
+                                                <constraint firstAttribute="trailing" secondItem="b8s-oX-HPp" secondAttribute="trailing" id="cuT-8o-1eU"/>
+                                                <constraint firstAttribute="bottom" secondItem="b8s-oX-HPp" secondAttribute="bottom" id="cvy-Ii-NO8"/>
+                                                <constraint firstItem="N84-Xi-Fgl" firstAttribute="centerY" secondItem="fDY-S4-IeJ" secondAttribute="centerY" id="cyv-C8-6Pp"/>
+                                                <constraint firstItem="b8s-oX-HPp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fDY-S4-IeJ" secondAttribute="leading" constant="20" symbolic="YES" id="iFx-Oo-6Tu"/>
+                                                <constraint firstItem="N84-Xi-Fgl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fDY-S4-IeJ" secondAttribute="leadingMargin" id="t9G-sT-BhF"/>
+                                                <constraint firstItem="O5b-tp-QNq" firstAttribute="top" secondItem="fDY-S4-IeJ" secondAttribute="topMargin" id="wwk-IV-8ic"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="taskDescriptionLabel" destination="b8s-oX-HPp" id="dGn-7d-c6K"/>
                                             <outlet property="taskLabel" destination="O5b-tp-QNq" id="OKy-q1-6d7"/>
@@ -191,7 +191,7 @@
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskDescriptionLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-fw-ETh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taskDescriptionLabel" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-fw-ETh">
                                 <rect key="frame" x="26.5" y="197" width="361.5" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -213,6 +213,7 @@
                             <constraint firstItem="wsa-fw-ETh" firstAttribute="top" secondItem="OfI-fV-ujT" secondAttribute="bottom" constant="20" id="AVZ-uT-vp5"/>
                             <constraint firstItem="OfI-fV-ujT" firstAttribute="centerX" secondItem="Wyw-fX-kTe" secondAttribute="centerX" id="Dbd-un-fG0"/>
                             <constraint firstItem="kIR-5d-KjU" firstAttribute="top" secondItem="wsa-fw-ETh" secondAttribute="bottom" constant="40" id="HbS-NC-KKr"/>
+                            <constraint firstItem="wsa-fw-ETh" firstAttribute="width" relation="lessThanOrEqual" secondItem="Wyw-fX-kTe" secondAttribute="width" id="Vye-2L-0fU"/>
                             <constraint firstItem="OfI-fV-ujT" firstAttribute="top" secondItem="iZ6-oJ-HQu" secondAttribute="top" constant="40" id="tC5-uv-rcD"/>
                             <constraint firstItem="kIR-5d-KjU" firstAttribute="centerX" secondItem="Wyw-fX-kTe" secondAttribute="centerX" id="y1v-fu-o69"/>
                             <constraint firstItem="wsa-fw-ETh" firstAttribute="centerX" secondItem="Wyw-fX-kTe" secondAttribute="centerX" id="yWl-S2-Ggm"/>

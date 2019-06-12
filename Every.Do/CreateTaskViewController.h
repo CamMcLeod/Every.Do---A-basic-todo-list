@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ToDo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -26,29 +26,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    int toDoCapacity = 7;
+     int toDoCapacity = 3;
     self.toDoTableView.delegate = self;
     self.toDoTableView.dataSource = self;
+    toDoArray = [[NSMutableArray alloc] initWithCapacity:3];
     
-    toDoArray = [[NSMutableArray alloc] initWithCapacity:toDoCapacity];
+    ToDo *task = [[ToDo alloc] init];
+    task.taskTitle = @"My First Task";
+    task.toDoDescription = @"Example Task - swipe to complete";
+    task.priorityNumber = 99;
+    toDoArray[0] = task;
+    NSLog(@"task '%@' added to array", [toDoArray[0] taskTitle]);
     
-    for (int i = 0; i <toDoCapacity; i++) {
-        
-        ToDo *task = [[ToDo alloc] init];
-        task.taskTitle = [NSString stringWithFormat:@"Task: %d", i ];
-        task.toDoDescription = [NSString stringWithFormat:@"Do this %d times", i ];
-        task.priorityNumber = (NSInteger)(toDoCapacity - i);
-        toDoArray[i] = task;
-        NSLog(@"task '%@' added to array", [toDoArray[i] taskTitle]);
-        
-    }
+    task = [[ToDo alloc] init];
+    task.taskTitle = @"My Second Task";
+    task.toDoDescription = @"Example Task - swipe to complete";
+    task.priorityNumber = 99;
+    toDoArray[1] = task;
+    NSLog(@"task '%@' added to array", [toDoArray[1] taskTitle]);
     
-//    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"raccoon.jpg"]];
-//    [tempImageView setFrame:self.toDoTableView.frame];
-//    tempImageView.contentMode = UIViewContentModeScaleAspectFill;
-//    tempImageView.alpha = 0.75;
-//    self.toDoTableView.backgroundView = tempImageView;
+    task = [[ToDo alloc] init];
+    task.taskTitle = @"My Third Task";
+    task.toDoDescription = @"Example Task - swipe to complete";
+    task.priorityNumber = 99;
+    toDoArray[2] = task;
+    NSLog(@"task '%@' added to array", [toDoArray[2] taskTitle]);
+    
+    
 }
+
+// segues
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -57,6 +64,50 @@
         
     }
 }
+
+//- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//}
+
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView
+leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+        
+    TaskToDoTableViewCell *swipedCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if (swipedCell.accessoryType == UITableViewCellAccessoryNone){
+        swipedCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        swipedCell.backgroundColor = [UIColor lightGrayColor];
+        
+        NSIndexPath *destinationIndexPath = [NSIndexPath indexPathForRow:[toDoArray count]-1 inSection:0];
+
+        NSLog(@"%@", indexPath);
+        NSLog(@"%@", destinationIndexPath);
+        [self.toDoTableView moveRowAtIndexPath:indexPath toIndexPath:destinationIndexPath];
+        
+    }
+    
+    return nil;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(editingStyle == UITableViewCellEditingStyleDelete) {
+        [toDoArray removeObjectAtIndex:indexPath.row];
+        [_toDoTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+// add task to array
 
 - (IBAction)unwindToViewController:(UIStoryboardSegue *)unwindSegue {
     
@@ -69,8 +120,7 @@
     taskSave.priorityNumber = [[newTaskViewController taskPriorityTextField].text integerValue];
     
     NSLog(@"New task '%@' created", taskSave.taskTitle);
-    
-    [toDoArray addObject:taskSave];
+    [toDoArray insertObject:taskSave atIndex:0];
     NSLog(@"%@", toDoArray);
     [self.toDoTableView reloadData];
 }
